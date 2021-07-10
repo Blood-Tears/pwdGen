@@ -1,7 +1,8 @@
 import random
 import string
 
-app = input("Welcome. Please enter the name of the platform: ")
+directory = input("Welcome! First, type down the path to where the files will be created: ")
+app = input("Please enter the name of the platform: ")
 username = input("Please enter your username: ")
 addrs = input("Enter the Email address: ") 
 #----------------------------Password---------------------------
@@ -14,16 +15,16 @@ chars = l+u+p+d
 pwd = "".join((random.choice(chars) for i in range(lenght)))
 
 #----------------------------File Handling----------------------
-file = open("/home/bloodtears/Documents/Code/Python/pwdgen/passwords/" +app+".txt", "a")
+file = open(directory+app+".txt", "a")
 file.write("Platform: "+app+"\n"
 "Username: "+username+"\n"
 "Address: "+addrs+"\n"
-"password: "+pwd+"\n"
+"Password: "+pwd+"\n"
 )
 file.close()
 
 print("===================================================================")
 print("Alright! we have saved all of your information in "+app+".txt")
-file = open("/home/bloodtears/Documents/Code/Python/pwdgen/passwords/" +app+".txt", "r")
+file = open(directory+app+".txt", "r")
 print(file.read())
 print("===================================================================")
